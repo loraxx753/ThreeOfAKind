@@ -1,0 +1,39 @@
+<template class="task-template">
+  <section id="hand-section" class="section js-section u-category-three-of-a-kind">
+    <header class="three-of-a-kind">
+      <div class="section-wrapper">
+        <h1>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-communication"></use></svg>
+          Hand
+        </h1>
+        <h3>Creates and manages a hand within a game.</h3>
+      </div>
+    </header>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="async-msg-demo-toggle" class="js-container-target demo-toggle-button">New Hand
+          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux <span class="demo-meta-divider">|</span> Process: Both</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button class="demo-button" id="hand-msg">Ping</button>
+            <span class="demo-response" id="hand-reply"></span>
+          </div>
+          <p>Using <code>ipc</code> to send messages between processes asynchronously is the preferred method since it will return when finished without blocking other operations in the same process.</p>
+
+          <p>This example sends a "ping" from this process (renderer) to the main process. The main process then replies with "pong".</p>
+          <h5>Renderer Process</h5>
+          <pre><code data-path="renderer-process/three-of-a-kind/hand.js"></code></pre>
+          <h5>Main Process</h5>
+          <pre><code data-path="main-process/three-of-a-kind/hand.js"></code></pre>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      require('./renderer-process/three-of-a-kind/hand')
+    </script>
+
+  </section>
+</template>
